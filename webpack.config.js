@@ -50,6 +50,9 @@ module.exports = {
             }
         ]
     },
+    devServer: { //Esto es necesario para manejar la historia y el manejo del navegador en donde me estoy moviendo en cada uno de los elementos.
+        historyApiFallback: true, //Esto es para React Router
+    },
     plugins: [
         new HtmlWebPackPlugin({
             template: './public/index.html', //Where is the template we have

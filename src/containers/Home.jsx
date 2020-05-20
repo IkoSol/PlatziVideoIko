@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/styles/App.scss'
-import Header from '../components/Header';
+import Header from '../components/HeaderHome';
 import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
