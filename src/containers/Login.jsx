@@ -4,10 +4,9 @@ import twitterIcon from '../assets/static/twitter-icon.png'
 import '../assets/styles/components/Login.scss'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Login = () => (
-    <div>
-    <Header />
     <section className="login">
         <section className="login__container">
             <h2>Inicia sesión</h2>
@@ -26,11 +25,14 @@ const Login = () => (
                 <div><img src={googleIcon}/> Inicia sesión con Google</div>
                 <div><img src={twitterIcon} /> Inicia sesión con Twitter</div>
             </section>
-            <p className="login__container--register">No tienes ninguna cuenta. <a href="">Regístrate</a></p>
+            <p className="login__container--register">
+                No tienes ninguna cuenta. 
+                <Link to="/register">
+                    Regístrate
+                </Link>
+            </p>
         </section>
     </section>
-    <Footer />
-    </div>
 )
 
 export default Login;
