@@ -3,7 +3,8 @@ const reducer = (state, action) => {
         case 'SET_FAVORITE':
             return{
                 ...state,
-                myList: [...state.myList, action.payload]
+                //myList: [...state.myList, action.payload]
+                myList: [...state.myList].find((item) => item.id === action.payload.id) ? state.myList : [...state.myList, action.payload],
             }
         case 'DELETE_FAVORITE': 
             return{
