@@ -1,12 +1,20 @@
+
 .header {
-    align-items: center;
+  align-items: center;
+  background: #8f57fd;
+  color: white;
+  display: flex;
+  height: 100px;
+  justify-content: space-between;
+  top: 0px;
+  width: 100%;
+}
+  .green {
+    background: #21c08b;
+  }
+  
+  .purple {
     background: #8f57fd;
-    color: white;
-    display: flex;
-    height: 100px;
-    justify-content: space-between;
-    top: 0px;
-    width: 100%;
   }
   
   .header__img {
@@ -54,4 +62,6 @@
   .header__menu--profile img {
     margin-right: 8px;
     width: 40px;
+    border-radius: 100%;
+    object-fit: cover;
   }

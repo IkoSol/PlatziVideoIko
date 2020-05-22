@@ -7,15 +7,17 @@ import userIcon from '../assets/static/user-icon.png'
 import { Link } from 'react-router-dom';
 import gravatar from '../utils/gravatar'
 import { logoutRequest } from '../actions'
+import classNames from 'classnames'
 
 const Header = props => {
-    const { user } = props
+    const { user, setColor } = props
     const hasUser = Object.keys(user).length > 0 //se usa object.keys a user ya que user es un objeto y no se puede saber la longitud de un objeto
     const handleLogout = () => {
         props.logoutRequest({})
     }
+    const inputStyle = classNames('header', setColor); //style header
     return (
-        <header className="header">
+        <header className={inputStyle}>
             <Link to="/">
                 <img className="header__img" src={logo} alt="Platzi Logo" />
             </Link>
