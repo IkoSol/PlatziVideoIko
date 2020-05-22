@@ -6,7 +6,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'), // detect the directory where the files are going to export and create the new folder named dist
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/' //de aquí va a partir el bundle
     },
     resolve: {
         extensions: ['.js', '.jsx'] //Resolve extension we'll use on the proyect

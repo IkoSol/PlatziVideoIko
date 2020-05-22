@@ -6,7 +6,7 @@ import logo from '../assets/static/logo-platzi-video-BW2.png'
 import userIcon from '../assets/static/user-icon.png'
 import { Link } from 'react-router-dom';
 import gravatar from '../utils/gravatar'
-import logoutRequest from '../actions'
+import { logoutRequest } from '../actions'
 
 const Header = props => {
     const { user } = props
