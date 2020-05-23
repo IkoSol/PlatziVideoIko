@@ -33,6 +33,21 @@ const reducer = (state, action) => {
                     || state.original.find(item => item.id === Number(action.payload))
                     || []
             }
+        case 'FILTER_VIDEOS':
+            let listFiltered = []
+
+            if (action.payload.length > 0){
+                listFiltered = state.trends.filter(list =>{
+                    return list.title.toLowerCase().includes(action.payload.toLowerCase())
+                }) || state.original.filter(list => {
+                    return list.title.toLowerCae().includes(action.payload.toLowerCase())
+                })
+            }
+
+            return {
+                ...state,
+                filteredList: listFiltered
+            }
         default:
             return state
     }

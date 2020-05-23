@@ -7,11 +7,26 @@ import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
 import Header from '../components/Header'
 
-const Home = ({ myList, trends, originals }) => { //Se ponen estos 3 props por destructuración, ya que abajo en el connect se mandan llamar
+const Home = props => { //Se ponen estos 3 props por destructuración, ya que abajo en el connect se mandan llamar
+    const { myList, trends, originals, filteredList } = props
     return (
         <>
             <Header />
             <Search isHome />
+            {filteredList?.length !== 0 &&
+                    <Categories title="Búsqueda">
+                        <Carousel>
+                        {filteredList.map(item => (
+                            <CarouselItem 
+                                key={item.id} 
+                                {...item}
+                                isList
+                            />
+                        ))}
+                        </Carousel>
+                    </Categories>
+                
+            }
             {myList?.length > 0 &&
                 <Categories title="Mi Lista">
                     <Carousel>
@@ -48,6 +63,7 @@ const mapStateToProps = state => {
         myList: state.myList,
         trends: state.trends,
         originals: state.originals,
+        filteredList: state.filteredList
     }
 }
 
